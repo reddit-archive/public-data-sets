@@ -1,0 +1,10 @@
+Every reddit link has a unique id, generated at time of submission. For example, https://www.reddit.com/r/Toby/comments/4r9uus/exploring_under_the_table/ has the id `4r9uus`. This isn't, however, just a random combination of letters and numbers — it's a base-36 representation of an integer. 
+
+     >>> int("4r9uus", 36)
+     287674228
+
+This submission was submission id 287,674,228. The submission immediately after this one would be 287,674,229 (`4r9uut` in base-36). 
+
+Since base-36 covers digits 0 to 9 and all 26 letters, some numbers are represented entirely in the letterspace. 15,941 is written in base-36 as `cat`, for instance. I was particularly interested in the intersection between two sets of interesting numbers: the set of numbers that are valid English words in base-36, and the set of positive primes.
+
+I generated a list of these "prime words" and hit reddit's public API to return all the "prime word links" posted to reddit in public, non-banned subreddits. 
